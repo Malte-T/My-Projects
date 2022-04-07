@@ -1,25 +1,46 @@
-package FizzBuzz;
+package David_Aufgaben.FizzBuzz;
 
 public class FizzBuzz {
+    
+    private Integer startCount;
+    private Integer endCount;
+    private Integer isDivisorNr1;
+    private Integer isDivisorNr2;
+    private Expression expression;          //contains a set of two strings
+
+    public FizzBuzz(Integer startCount, Integer endCount, Integer isDivisorNr1, Integer isDivisorNr2, Expression expression) {
+        this.startCount = startCount;
+        this.endCount = endCount;
+        this.isDivisorNr1 = isDivisorNr1;
+        this.isDivisorNr2= isDivisorNr2;
+        this.expression = expression;
+    }
 
     /**
-     * Counts from 1 to 100.
-     * Replaces every number dividable by 3 with 'Fizz' and every number dividable by 5 with 'Buzz'.
-     * If a number can be divided by 3 and 5, it is replaced with 'FizzBuzz'.
+     * Counts up to from 'startCount' to 'endCount'.
+     * Replaces numbers dividable by 'isDivisorNr1' with 'DivisorExpression_Nr1' from class 'expression'. 'isDivisorNr2' is analogous.
+     * If a number is dividable by both divisors, 'combinedExpression' is printed out.
      */
-    public void counting() {
-        for (int increasingNumber = 1; increasingNumber <= 100; increasingNumber++) {
-            if (increasingNumber % 3 == 0 & increasingNumber % 5 == 0) {
-                System.out.println("FizzBuzz");
+    public void replaceNumbers() {
+        for (int i = this.startCount; i <= this.endCount; i++) {
+            if (i % isDivisorNr1 == 0) {
+                if (i % isDivisorNr2 == 0) {
+                    System.out.println(this.expression.getCombinedExpression());
+                }
+                else {
+                    System.out.println(this.expression.getDivisorExpression_Nr1());
+                }
             }
-            else if (increasingNumber % 3 == 0) {
-                System.out.println("Fizz");
-            }
-            else if (increasingNumber % 5 == 0) {
-                System.out.println("Buzz");
+            else if (i % isDivisorNr2 == 0) {
+                if (i % isDivisorNr1 == 0) {
+                    System.out.println(this.expression.getCombinedExpression());
+                }
+                else {
+                    System.out.println(this.expression.getDivisorExpression_Nr2());
+                }
             }
             else {
-                System.out.println(increasingNumber);
+                System.out.println(i);
             }
         }
     }

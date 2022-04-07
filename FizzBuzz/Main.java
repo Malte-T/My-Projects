@@ -1,9 +1,10 @@
-package FizzBuzz;
+package David_Aufgaben.FizzBuzz;
 
 public class Main {
 
     public static void main(String[] args) {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        fizzBuzz.counting();
+        Expression fizzleBuzzle = new Expression("Fizzle", "Buzzle");
+        FizzBuzz  fizzBuzz = new FizzBuzz(-100, 50, 4, 6, fizzleBuzzle);
+        fizzBuzz.replaceNumbers();
     }
 }
