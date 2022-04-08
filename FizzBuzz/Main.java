@@ -3,8 +3,11 @@ package David_Aufgaben.FizzBuzz;
 public class Main {
 
     public static void main(String[] args) {
-        Expression fizzleBuzzle = new Expression("Fizzle", "Buzzle");
-        FizzBuzz  fizzBuzz = new FizzBuzz(-100, 50, 4, 6, fizzleBuzzle);
-        fizzBuzz.replaceNumbers();
+        Expression expression = new Expression("Fizzle", "Buzzle");
+        FizzBuzz  fizzleBuzzle = new FizzBuzz(-100, 50, 4, 6, expression);
+        System.out.println(fizzleBuzzle.replaceNumbers());
+
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        System.out.println(fizzBuzz.replaceNumbers());
     }
 }
